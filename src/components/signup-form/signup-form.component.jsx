@@ -14,19 +14,19 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const SignUpForm = ({handleSubmit, handleName, handleLastName, handleEmail, handlePassword}) => {
+const SignUpForm = ({handleSubmit, handleName, handleLastName, name, password, lastName, email,  handleEmail, handlePassword}) => {
     const classes = useStyles();
     return (
         <SignUpFormContainer>
             <form className={classes.root} onSubmit={handleSubmit} noValidate autoComplete="off">
               <div className='form-container'>
-                <TextField  onChange={handleName}  label="First Name" variant="outlined" />
+                <TextField value={name} onChange={handleName}  label="First Name" variant="outlined" />
                 <br />
-                <TextField  onChange={handleLastName} label="Last Name" variant="outlined" />
+                <TextField value={lastName} onChange={handleLastName} label="Last Name" variant="outlined" />
                 <br />
-                <TextField  onChange={handleEmail} label="Email" variant="outlined" />
+                <TextField value={email} onChange={handleEmail} label="Email" variant="outlined" />
                 <br />
-                <TextField onChange={handlePassword} label="Password"  variant="outlined" />
+                <TextField value={password} onChange={handlePassword} label="Password"  variant="outlined" />
             </div>
             <br />
             <div className='button-container'>

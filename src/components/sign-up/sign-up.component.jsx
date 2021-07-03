@@ -39,7 +39,7 @@ const SignUp = () => {
            return  alert(error.message)
         }
         try {
-           const res =  await axios.post(`http://localhost:8000/api/register`, {
+           const res =  await axios.post(`http://localhost:8000/api/signup`, {
                name,
                lastName,
                email,
@@ -47,7 +47,7 @@ const SignUp = () => {
            })
            console.log(res)
         }
-        catch(err) {
+        catch (err) {
             console.log(err)
         }
     }
@@ -57,6 +57,8 @@ const SignUp = () => {
             <div className='container'>
                 <div className='text-container'>
                     <h2 className='login-text'>Create an account</h2>
+                    <h5>{name}</h5>
+                    <h5>{password}</h5>
                 </div>
                  <SignUpForm 
                   name={name}
