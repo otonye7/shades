@@ -57,8 +57,6 @@ const SignUp = () => {
             <div className='container'>
                 <div className='text-container'>
                     <h2 className='login-text'>Create an account</h2>
-                    <h5>{name}</h5>
-                    <h5>{password}</h5>
                 </div>
                  <SignUpForm 
                   name={name}
