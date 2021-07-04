@@ -52,9 +52,9 @@ const history = useHistory();
             <div className='container'>
                 <div className='text-container'>
                     <h2 className='login-text'>Login</h2>
-                    <h3>{email}</h3>
-                    <h3>{password}</h3>
                 </div>
+                <br />
+                <br />
                 <div className='login-form'>
                 <LoginForm 
                    email={email}
