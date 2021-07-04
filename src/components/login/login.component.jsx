@@ -2,8 +2,11 @@ import {useState} from 'react';
 import { LoginContainer } from './login.styles';
 import LoginForm from '../login-form/login-form.component';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
+
 
 const Login = () => {
+const history = useHistory();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -32,6 +35,12 @@ const Login = () => {
              password
          })
          console.log(res)
+
+         if (res.data) {
+             window.localStorage.setItem('auth', JSON.stringify(res.data))
+
+                 history.push('/')
+         }
       }
       catch (err) {
           console.log(err)
@@ -46,6 +55,7 @@ const Login = () => {
                     <h3>{email}</h3>
                     <h3>{password}</h3>
                 </div>
+                <div className='login-form'>
                 <LoginForm 
                    email={email}
                    password={password}
@@ -53,6 +63,8 @@ const Login = () => {
                    handlePassword={handlePassword}
                    handleSubmit={handleSubmit}
                 />
+                </div>
+               
          </div>
         </LoginContainer>   
     )

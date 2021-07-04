@@ -6,8 +6,9 @@ export const LoginContainer = styled.div`
 
 
 
+
    .container {
-       width: 50%;
+       width: 100%;
        align-content: center;
        margin: 0 auto;
    }
@@ -18,6 +19,13 @@ export const LoginContainer = styled.div`
        font-style: normal;
        font-weight: 700;
        line-height: 1.2;
+   }
+
+   .login-form {
+       display: flex;
+       justify-content: center;
+       width: 40%;
+       margin: 0 auto;
    }
 
 `;

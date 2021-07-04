@@ -1,13 +1,13 @@
+import Home from '../../components/home/home.component';
+// import { HomeContainer } from './home.styles';
 
-// // import { HomeContainer } from './home.styles';
 
+const HomePage = () => {
+    return (
+        <div>
+            <Home />
+        </div>
+    )
+}
 
-// const Home = () => {
-//     return (
-//         <div>
-//             {/* <Login /> */}
-//         </div>
-//     )
-// }
-
-// export default Home;
+export default HomePage;

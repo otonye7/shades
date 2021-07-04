@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 export const LoginFormContainer = styled.div`
    width: 100%;
+   max-width: 1350px;
+   display: flex;
+   justify-content: center;
 
 
    .login-text {
