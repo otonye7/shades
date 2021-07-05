@@ -1,11 +1,11 @@
-import Home from '../../components/home/home.component';
+import Hero from '../../components/hero/hero.component';
 // import { HomeContainer } from './home.styles';
 
 
 const HomePage = () => {
     return (
         <div>
-            <Home />
+            <Hero />
         </div>
     )
 }
