@@ -22,4 +22,9 @@ export const CarouselContainer = styled.div`
        color: #262626;
        line-height: 1.5;
    }
+
+   img {
+    width: 100%;
+    height: auto;
+}
 `;
