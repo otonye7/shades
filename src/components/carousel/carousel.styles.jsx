@@ -6,7 +6,7 @@ export const CarouselContainer = styled.div`
 .text {
        text-align: center;
        font-size: 30px;
-       font-family: Lato,sans-serif;
+       font-family: Black Jack;
        font-style: normal;
        font-weight: 400;
        color: #262626;
@@ -16,7 +16,7 @@ export const CarouselContainer = styled.div`
    .logo-text {
       text-align: center;
        font-size: 25px;
-       font-family: "Lucida Console", Courier, monospace;
+       font-family:  Brush Script Mt;
        font-style: normal;
        font-weight: 400;
        color: #262626;
