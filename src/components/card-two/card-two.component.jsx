@@ -1,5 +1,5 @@
 import { CardContainer } from './card-two.styles';
-import Glass from  '../../assets/micheal.jpg';
+import Glass from  '../../assets/claudio.jpg';
 import {Link} from 'react-router-dom';
 
 const CardTwo = () => {

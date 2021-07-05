@@ -6,6 +6,8 @@ import BestSeller from '../../components/best-seller/best-seller.component';
 import CardOne from '../../components/card-one/card-one.component';
 import NewArrival from '../../components/new-arrival/new-arrival.component';
 import CardTwo from '../../components/card-two/card-two.component';
+import SecondGrid from '../../components/second-grid/second-grid.component';
+import Features from '../../components/features/features.component';
 // import { HomeContainer } from './home.styles';
 
 
@@ -32,6 +34,10 @@ const HomePage = () => {
             <br />
             <br />
             <CardTwo />
+            <SecondGrid />
+            <br />
+            <br />
+            <Features />
         </div>
     )
 }
