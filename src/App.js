@@ -4,6 +4,7 @@ import HomePage from  './pages/home/home.component';
 import LoginPage from './pages/login/login.component';
 import SignUpPage from './pages/sign-up/sign-up.component';
 import Footer from '../src/components/footer/footer.component';
+import BestSeller from '../src/components/bestseller/bestseller.component';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route exact path={'/'} component={HomePage} />
           <Route path={'/login'} component={LoginPage} />
           <Route path={'/signup'} component={SignUpPage} />
-          {/* <Route path={'/signup'} component={SignUp} /> */}
+          <Route path={'/bestseller'} component={BestSeller} /> 
 			</Switch>
       <br />
       <br />

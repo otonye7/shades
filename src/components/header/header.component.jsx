@@ -3,6 +3,7 @@ import VoicemailIcon from '@material-ui/icons/Voicemail';
 import SearchIcon from '@material-ui/icons/Search';
 import PersonIcon from '@material-ui/icons/Person';
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -11,7 +12,7 @@ const Header = () => {
             <div className='logo-container'>
                 <VoicemailIcon />
                 <div className='logo-text'>
-                    <h2 className='samo-text'>S0H0QUEST</h2>
+                    <Link to='/' className='samo-text'>S0H0QUEST</Link>
                 </div>
             </div>
 
@@ -40,9 +41,9 @@ const Header = () => {
                     <div className='searchicons'>
                         <SearchIcon />
                     </div>
-                    <div className='personicons'>
+                    <Link to='/login' className='personicons'>
                         <PersonIcon />
-                    </div>
+                    </Link>
                     <div className='carticons'>
                         <LocalGroceryStoreIcon />
                     </div>

@@ -44,8 +44,19 @@ export const HeaderContainer = styled.div`
       align-items: center;
   }
 
+  .personicons {
+    color: black;
+  }
+
   .border-bottom {
     border: 1px solid black;
     opacity: 0.1;
+  }
+
+  .samo-text {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    color: black;
   }
 `;

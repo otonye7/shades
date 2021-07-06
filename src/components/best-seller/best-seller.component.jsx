@@ -8,7 +8,7 @@ const BestSeller = () => {
                 <h2 className='text'>BEST SELLER</h2>
             </div> 
             <div className='links'>
-                <Link className='link-text'>View all</Link>
+                <Link to='/bestseller' className='link-text'>View all</Link>
             </div>
         </BestSellerContainer>
     )
