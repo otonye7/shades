@@ -5,6 +5,7 @@ import LoginPage from './pages/login/login.component';
 import SignUpPage from './pages/sign-up/sign-up.component';
 import Footer from '../src/components/footer/footer.component';
 import BestSeller from '../src/components/bestseller/bestseller.component';
+import PostForm from '../src/components/post-form/post-form.component';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path={'/login'} component={LoginPage} />
           <Route path={'/signup'} component={SignUpPage} />
           <Route path={'/bestseller'} component={BestSeller} /> 
+          <Route path={'/post-form'} component={PostForm} /> 
 			</Switch>
       <br />
       <br />
