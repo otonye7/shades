@@ -47,28 +47,44 @@ const PostForm = () => {
         try {
             let res = await axios.post(`http://localhost:8000/api/bestseller`, glassData, {
                 headers: {
-                    // Authorization: `Bearer ${token}`
+                    Authorization: `Bearer ${token}`
                 }
             })
+            console.log(res)
+            setTimeout(() => {
+                window.location.reload()
+            }, 1000)
         } catch (err) {
             console.log(err)
+            alert("Image failed to save");
         }
+    }
+
+    const handleImageChange = (e) => {
+        setPreview(URL.createObjectURL(e.target.files[0]))
+        setValues({...value, image: e.target.files[0]})
+    }
+
+    const handleChange = (e) => {
+        setValues({...value, [e.target.name]: e.target.value})
     }
 
     return (
         <PostFormContainer>
-             <form className={classes.root}   noValidate autoComplete="off">
+             <form className={classes.root} onSubmit={handleSubmit}  noValidate autoComplete="off">
               <div className='form-container'>
-                <input type='file' />
+                <input name='image' type='file' onChange={handleImageChange} />
                 <br />
-                <TextField size="small"  label="Title" variant="outlined" />
+                <TextField onChange={handleChange} name='title' size="small"  label="Title" variant="outlined" />
                 <br />
-                <TextField type='number' size="small" label="Price"    variant="outlined" />
+                <TextField onChange={handleChange} name='price' type='number' size="small" label="Price"    variant="outlined" />
                 <br />
-                <TextField  size="large" label="Descripion"    variant="outlined" />
+                <TextField onChange={handleChange} name='description' size="large" label="Descripion"    variant="outlined" />
             </div>
             <br />
             <div className='button-container'>
+                <img src={preview} alt="preview_image" className='img img-fluid m-2'/>
+                <pre>{JSON.stringify(value)}</pre>
                <div className='btn'>
                     <Button className='btn'>Post</Button>
                </div>
