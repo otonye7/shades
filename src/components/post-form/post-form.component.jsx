@@ -1,3 +1,4 @@
+import {useState} from 'react';
 import { PostFormContainer } from './post-form.styles';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -19,6 +20,23 @@ const useStyles = makeStyles((theme) => ({
 
 const PostForm = () => {
     const classes = useStyles();
+    const [value, setValues] = useState({
+        title: '',
+        price: '',
+        description: '',
+        image: ''
+    })
+    const {title, price, description, image} = value
+    const [preview, setPreview] = useState('')
+
+    const handleSubmit = async (e) => {
+        let glassData = new FormData()
+        glassData.append('title', title)
+        glassData.append('price', price)
+        glassData.append('description', description)
+        image && glassData.append('image', image)
+    }
+
     return (
         <PostFormContainer>
              <form className={classes.root}   noValidate autoComplete="off">
