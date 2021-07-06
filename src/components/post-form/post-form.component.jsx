@@ -32,8 +32,7 @@ const PostForm = () => {
     
     let user = window.localStorage.getItem('auth');
     let userObj = JSON.parse(user);
-    const token = userObj.token
-    console.log(token)
+    const token = userObj.token;
     
 
     const handleSubmit = async (e) => {
