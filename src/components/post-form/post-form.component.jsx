@@ -3,6 +3,7 @@ import { PostFormContainer } from './post-form.styles';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '../button/button.component';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,6 +29,12 @@ const PostForm = () => {
     })
     const {title, price, description, image} = value
     const [preview, setPreview] = useState('')
+    
+    let user = window.localStorage.getItem('auth');
+    let userObj = JSON.parse(user);
+    const token = userObj.token
+    console.log(token)
+    
 
     const handleSubmit = async (e) => {
         let glassData = new FormData()
@@ -35,6 +42,18 @@ const PostForm = () => {
         glassData.append('price', price)
         glassData.append('description', description)
         image && glassData.append('image', image)
+        
+        console.log([...glassData])
+
+        try {
+            let res = await axios.post(`http://localhost:8000/api/bestseller`, glassData, {
+                headers: {
+                    // Authorization: `Bearer ${token}`
+                }
+            })
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
