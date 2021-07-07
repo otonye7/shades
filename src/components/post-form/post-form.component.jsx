@@ -83,7 +83,7 @@ const PostForm = () => {
             </div>
             <br />
             <div className='button-container'>
-                <img src={preview} alt="preview_image" className='img img-fluid m-2'/>
+               <img src={preview} alt="preview_image" className='img img-fluid m-2'/>
                 <pre>{JSON.stringify(value)}</pre>
                <div className='btn'>
                     <Button className='btn'>Post</Button>
