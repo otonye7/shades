@@ -1,12 +1,10 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import { BestSellerItemsContainer } from './best-seller-items.styles';
 import MenuItems from '../menu-items/menu-items.component';
-import { BestSellerContainer } from './bestseller.styles';
-import bestSeller from  '../../assets/bestseller.png';
 
 
-const BestSeller = () => {
-
+const BestSellerItems = () => {
     const [glasses, setGlasses] = useState([]);
 
     useEffect(() => {
@@ -19,19 +17,14 @@ const BestSeller = () => {
     }
 
     return (
-        <BestSellerContainer>
-            <div className='background-image'>
-                 <img src={bestSeller} alt="" />
-            </div>
-            <br />
-            <br />
+        <BestSellerItemsContainer>
             <div>
                 {
                     glasses.map((glasses) => <MenuItems key={glasses._id} glasses={glasses} />)
                 }
             </div>
-        </BestSellerContainer>
+        </BestSellerItemsContainer>
     )
 }
 
-export default BestSeller
+export default BestSellerItems;

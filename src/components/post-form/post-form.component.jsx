@@ -45,7 +45,7 @@ const PostForm = () => {
         console.log([...glassData])
 
         try {
-            let res = await axios.post(`http://localhost:8000/api/bestseller`, glassData, {
+            let res = await axios.post(`http://localhost:8000/api/create-glasses`, glassData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
