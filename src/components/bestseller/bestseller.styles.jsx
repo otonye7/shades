@@ -16,6 +16,15 @@ export const BestSellerContainer = styled.div`
       grid-template-columns: 1fr 1fr 1fr;
    }
 
+   .text {
+       text-align: center;
+       font-family: Lato,sans-serif;
+       font-style: normal;
+       font-weight: 400;
+       line-height: 1.2;
+       font-size: 35px;
+   }
+
    img {
     width: 100%;
     height: auto;

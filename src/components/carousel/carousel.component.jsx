@@ -2,6 +2,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { CarouselContainer } from './carousel.styles';
 
+
 const CarouselComponent = () => {
     return  (
         <CarouselContainer>

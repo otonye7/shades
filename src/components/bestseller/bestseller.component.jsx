@@ -3,6 +3,7 @@ import axios from 'axios';
 import MenuItems from '../menu-items/menu-items.component';
 import { BestSellerContainer } from './bestseller.styles';
 import bestSeller from  '../../assets/bestseller.png';
+import InstaGrid from '../insta-grid/insta-grid.component';
 
 
 const BestSeller = () => {
@@ -30,6 +31,13 @@ const BestSeller = () => {
                 {
                     glasses.map((glasses) => <MenuItems key={glasses._id} glasses={glasses}/>)
                 }
+            </div>
+            <br />
+            <br />
+            <div className='other'>
+                <h2 className='text'>How Others Wear It</h2>
+                <br />
+                <InstaGrid />
             </div>
         </BestSellerContainer>
     )
