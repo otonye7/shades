@@ -1,10 +1,12 @@
 import { MenuItemContainer } from './menu-items.styles';
+import {useHistory} from 'react-router-dom';
 // import axios from 'axios';
 // import { withRouter } from 'react-router-dom';
 
 
 const MenuItems = ({glasses}) => {
     const {title, image, _id} = glasses
+    const history = useHistory();
 
     // let user = window.localStorage.getItem('auth');
     // let userObj = JSON.parse(user);
@@ -22,7 +24,7 @@ const MenuItems = ({glasses}) => {
     return (
         <MenuItemContainer>
         <div className='container'>
-           <div className='`menu-items'>
+           <div onClick={() => history.push(`/bestseller/${_id}`)} className='`menu-items'>
             { 
              image && image.contentType ? (
                 <img src={`http://localhost:8000/api/bestseller/image/${_id}`}

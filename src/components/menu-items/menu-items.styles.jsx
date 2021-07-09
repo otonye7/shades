@@ -13,6 +13,10 @@ export const MenuItemContainer = styled.div`
       align-items: center;
    }
 
+   .image {
+       cursor: pointer;
+   }
+
    .title {
        font-family: Lato,sans-serif;
        font-style: normal;
