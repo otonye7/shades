@@ -18,6 +18,7 @@ const BestSeller = () => {
         setGlasses(res.data)
     }
 
+
     return (
         <BestSellerContainer>
             <div className='background-image'>
@@ -25,9 +26,9 @@ const BestSeller = () => {
             </div>
             <br />
             <br />
-            <div>
+            <div className='preview'>
                 {
-                    glasses.map((glasses) => <MenuItems key={glasses._id} glasses={glasses} />)
+                    glasses.map((glasses) => <MenuItems key={glasses._id} glasses={glasses}/>)
                 }
             </div>
         </BestSellerContainer>
