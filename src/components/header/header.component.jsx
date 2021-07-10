@@ -1,54 +1,109 @@
 import { HeaderContainer } from './header.styles';
+import React, {useState}  from 'react';
+import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 import VoicemailIcon from '@material-ui/icons/Voicemail';
-import SearchIcon from '@material-ui/icons/Search';
+ import SearchIcon from '@material-ui/icons/Search';
 import PersonIcon from '@material-ui/icons/Person';
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
-import {Link} from 'react-router-dom';
+
 
 const Header = () => {
+    
+    const [click, setClick] = useState(false);
+
+    const handleClick = () => setClick(!click);
     return (
         <HeaderContainer>
-            <div className='container'>
-            <div className='logo-container'>
-                <VoicemailIcon />
-                <div className='logo-text'>
-                    <Link to='/' className='samo-text'>S0H0QUEST</Link>
-                </div>
-            </div>
+        <nav className="navbar">
+        <div className='logo'>
+            <VoicemailIcon className='voice'/>
+            <h2 className='logo-text'>S0H0QUEST</h2>
+        </div>  
+    
+     <div className="nav-icon" onClick={handleClick}>
+          {
+             click ? <CloseIcon /> : <MenuIcon />
+          }
+          </div>
 
-            <div className='nav-links'>
-                <div className='navs'>
-                    <h5 className='nav-text'>Sunglasses</h5>
-                </div>
-                <div className='navs'>
-                    <h5 className='nav-text'>Sports</h5>
-                </div>
-                <div className='navs'>
-                    <h5 className='nav-text'>Bluelight</h5>
-                </div>
-                <div className='navs'>
-                    <h5 className='nav-text'>Accessories</h5>
-                </div>
-                <div className='navs'>
-                    <h5 className='nav-text'>Sales</h5>
-                </div>
-                <div className='navs'>
-                    <h5 className='nav-text'>Learnmore</h5>
-                </div>
-                </div>
-
-                <div className='header-icons'>
-                    <div className='searchicons'>
-                        <SearchIcon />
-                    </div>
-                    <Link to='/login' className='personicons'>
-                        <PersonIcon />
-                    </Link>
-                    <div className='carticons'>
-                        <LocalGroceryStoreIcon />
-                    </div>
-            </div>
-            </div>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/new-arrival"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Sunglasses
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/men"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Sports
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/women"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Bluelight
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/kids"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Accessories
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/sales"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                SALES
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/brands"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Learn More
+              </NavLink>
+            </li>
+          </ul>
+          <SearchIcon />
+          <Link to='/login'>
+             <PersonIcon className='icons' />
+          </Link>
+          
+          <LocalGroceryStoreIcon className='g-icons'/>
+      </nav>
             <div className='border-bottom'></div>
         </HeaderContainer>
         
