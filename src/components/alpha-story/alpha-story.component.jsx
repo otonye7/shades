@@ -1,4 +1,7 @@
 import { AlphaContainer } from './alpha-story.styles';
+import Icons from '../icons/icons.component';
+import Faq from '../faq/faq.component';
+import InstaGrid from '../insta-grid/insta-grid.component';
 
 const AlphaStory = () => {
     return (
@@ -12,6 +15,21 @@ const AlphaStory = () => {
         </span>
         </div>
         </div> 
+        <br />
+        <br />
+        <br />
+        <Icons />
+        <br />
+        <br />
+        <Faq />
+        <br />
+        <br />
+        <br />
+        <div className='other'>
+                <h2 className='texts'>How Others Wear It</h2>
+                <br />
+                <InstaGrid />
+        </div>
         </AlphaContainer>
        
     )

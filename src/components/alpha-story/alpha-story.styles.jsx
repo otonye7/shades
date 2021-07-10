@@ -28,4 +28,14 @@ export const AlphaContainer = styled.div`
        color: #262626;
        line-height: 1.5;
    }
+
+   .texts {
+       text-align: center;
+       font-size: 35px;
+       font-family: Lato,sans-serif;
+       font-style: normal;
+       font-weight: 400;
+       color: #262626;
+       line-height: 1.5;
+   }
 `;
