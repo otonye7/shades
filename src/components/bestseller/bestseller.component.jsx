@@ -16,9 +16,12 @@ const BestSeller = () => {
 
     const loadGlasses = async () => {
         let res = await axios.get(`http://localhost:8000/api/bestseller`)
+        // console.log(res)
         setGlasses(res.data)
     }
 
+    console.log(glasses)
+    
 
     return (
         <BestSellerContainer>

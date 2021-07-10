@@ -1,27 +1,31 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { BestSellerItemsContainer } from './best-seller-items.styles';
-// import MenuItems from '../menu-items/menu-items.component';
+
+
 
 
 const BestSellerItems = ({match}) => {
-    const [glasses, setGlasses] = useState([]);
+    // console.log(match)
+    const [glass, setGlass] = useState([]);
 
     useEffect(() => {
-        loadGlasses()
+        loadGlass()
     }, [])
 
-    const loadGlasses = async () => {
+    const loadGlass = async () => {
        let res = await axios.get(`http://localhost:8000/api/bestseller/${match.params.id}`)
-      setGlasses(res.data)
+      setGlass(res.data)
     }
+
+    console.log(glass)
 
     return (
         <BestSellerItemsContainer>
             <div>
-                {/* {
-                    glasses.map((glasses) => <MenuItems key={glasses._id} glasses={glasses} />)
-                } */}
+            {
+                glass.title
+            }
             </div>
         </BestSellerItemsContainer>
     )
