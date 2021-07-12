@@ -6,7 +6,9 @@ import SignUpPage from './pages/sign-up/sign-up.component';
 import Footer from '../src/components/footer/footer.component';
 import BestSeller from '../src/components/bestseller/bestseller.component';
 import PostForm from '../src/components/post-form/post-form.component';
+import NewArrivalForm from '../src/components/new-arrival-form/new-arrival-form.component';
 import BestSellerItem from '../src/components/best-seller-items/best-seller-items.component';
+import NewArrival from '../src/components/newarrival/newarrival.component';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
           <Route exact path={'/bestseller'} component={BestSeller} /> 
           <Route path={'/bestseller/:id'} component={BestSellerItem} /> 
           <Route path={'/post-form'} component={PostForm} /> 
+          <Route path={'/new-arrival-form'} component={NewArrivalForm} /> 
+          <Route exact path={'/new-arrival'} component={NewArrival} /> 
 			</Switch>
       <br />
       <br />

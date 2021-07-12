@@ -8,7 +8,7 @@ const NewArrival = () => {
                 <h2 className='text'>NEW ARRIVAL</h2>
             </div> 
             <div className='links'>
-                <Link className='link-text'>View all</Link>
+                <Link to='/new-arrival' className='link-text'>View all</Link>
             </div>
         </FeaturedContainer>
         

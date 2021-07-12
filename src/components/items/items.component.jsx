@@ -1,11 +1,11 @@
-import { MenuItemContainer } from './menu-items.styles';
+import { MenuItemContainer } from './items.styles';
 import {useHistory} from 'react-router-dom';
 //  import axios from 'axios';
 // import { withRouter } from 'react-router-dom';
 
 
-const MenuItems = ({glasses}) => {
-    const {title, image, _id} = glasses
+const Items = ({glasses}) => {
+    const {title, image, _id, price} = glasses
     const history = useHistory();
 
     //  let user = window.localStorage.getItem('auth');
@@ -42,11 +42,16 @@ const MenuItems = ({glasses}) => {
            <div className='menu-title'>
                <h5 className='title'>{title}</h5>
            </div>
+           <div className='menu-title'>
+               <h5 className='title'>${price}</h5>
+           </div>
            </div>
             {/* <button onClick={() => handleDelete(_id)}>Delete</button>  */}
-           <div className='border'></div>
+            <div className='button'>
+                <button className='b-text'>Add To Cart</button>
+            </div>
         </MenuItemContainer>
     )
 }
 
-export default MenuItems;
+export default Items;

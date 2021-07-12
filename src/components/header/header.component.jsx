@@ -20,7 +20,7 @@ const Header = () => {
         <nav className="navbar">
         <div className='logo'>
             <VoicemailIcon className='voice'/>
-            <h2 className='logo-text'>S0H0QUEST</h2>
+            <Link to ='/' className='logo-text'>S0H0QUEST</Link>
         </div>  
     
      <div className="nav-icon" onClick={handleClick}>

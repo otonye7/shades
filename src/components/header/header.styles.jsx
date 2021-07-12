@@ -81,6 +81,13 @@ export const HeaderContainer = styled.div`
   color: black;
 }
 
+.logo-text {
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-weight: 600;
+}
+
 .g-icons {
   align-items: center;
 }
