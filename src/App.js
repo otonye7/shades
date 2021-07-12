@@ -9,6 +9,11 @@ import PostForm from '../src/components/post-form/post-form.component';
 import NewArrivalForm from '../src/components/new-arrival-form/new-arrival-form.component';
 import BestSellerItem from '../src/components/best-seller-items/best-seller-items.component';
 import NewArrival from '../src/components/newarrival/newarrival.component';
+import SunGlasses from '../src/components/sun-glasses/sun-glasses.component';
+import Sports from '../src/components/sports/sports.component';
+import BlueLights from '../src/components/blue-lights/blue-lights.component';
+import Accessories from '../src/components/accessories/accessories.component';
+import Sales from '../src/components/sales/sales.component';
 
 
 function App() {
@@ -24,6 +29,11 @@ function App() {
           <Route path={'/post-form'} component={PostForm} /> 
           <Route path={'/new-arrival-form'} component={NewArrivalForm} /> 
           <Route exact path={'/new-arrival'} component={NewArrival} /> 
+          <Route exact path={'/sun-glasses'} component={SunGlasses} /> 
+          <Route exact path={'/sports'} component={Sports} /> 
+          <Route exact path={'/blue-lights'} component={BlueLights} /> 
+          <Route exact path={'/accessories'} component={Accessories} /> 
+          <Route exact path={'/sales'} component={Sales} /> 
 			</Switch>
       <br />
       <br />

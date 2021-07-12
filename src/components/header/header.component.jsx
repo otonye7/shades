@@ -33,7 +33,7 @@ const Header = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/new-arrival"
+                to="/sun-glasses"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -44,7 +44,7 @@ const Header = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/men"
+                to="/sports"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -55,7 +55,7 @@ const Header = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/women"
+                to="/blue-lights"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -66,7 +66,7 @@ const Header = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/kids"
+                to="/accessories"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -88,7 +88,7 @@ const Header = () => {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/brands"
+                to="/learn-mmore"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
