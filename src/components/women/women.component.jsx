@@ -1,11 +1,11 @@
 import {useState, useEffect} from 'react';
-import { NewArrivalContainer } from './sun-glasses.styles';
+import { NewArrivalContainer } from './women.styles';
 import axios from 'axios';
 import Items from '../items/items.component';
-import Kids from  '../../assets/kids.png';
+import Kids from  '../../assets/womenbanner.png';
 import InstaGrid from '../insta-grid/insta-grid.component';
 
-const SunGlasses = () => {
+const Women = () => {
     const [glasses, setGlasses] = useState([]);
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const SunGlasses = () => {
             </div>
              <div  className='preview'>
              {
-                  glasses.filter((glasses) => glasses.number > 20 && glasses.number <= 28).map((glasses) => <Items key={glasses._id} glasses={glasses} />) 
+                  glasses.filter((glasses) => glasses.number > 20 && glasses.number <= 35).map((glasses) => <Items key={glasses._id} glasses={glasses} />) 
                 }
             </div>  
             <br />
@@ -40,4 +40,4 @@ const SunGlasses = () => {
     )
 }
 
-export default SunGlasses
+export default Women

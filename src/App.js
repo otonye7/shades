@@ -14,7 +14,8 @@ import Sports from '../src/components/sports/sports.component';
 import BlueLights from '../src/components/blue-lights/blue-lights.component';
 import Accessories from '../src/components/accessories/accessories.component';
 import Sales from '../src/components/sales/sales.component';
-
+import Men from '../src/components/men/men.component';
+import Women from '../src/components/women/women.component';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
           <Route exact path={'/blue-lights'} component={BlueLights} /> 
           <Route exact path={'/accessories'} component={Accessories} /> 
           <Route exact path={'/sales'} component={Sales} /> 
+          <Route exact path={'/men'} component={Men} /> 
+          <Route exact path={'/women'} component={Women} /> 
 			</Switch>
       <br />
       <br />

@@ -32,7 +32,7 @@ const BestSeller = () => {
             <br />
             <div className='preview'>
                 {
-                    glasses.map((glasses) => <MenuItems key={glasses._id} glasses={glasses}/>)
+                    glasses.filter((glasses) => glasses.number <= 9).map((glasses) => <MenuItems key={glasses._id} glasses={glasses}/>)
                 }
             </div>
             <br />

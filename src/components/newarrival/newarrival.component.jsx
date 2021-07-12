@@ -25,7 +25,9 @@ const NewArrival = () => {
                  <img src={Newarrival} alt="" />
             </div>
              <div  className='preview'>
-                  {glasses.map((glasses) => <Items key={glasses._id} glasses={glasses} />) }
+                 {
+                  glasses.filter((glasses) => glasses.number > 10 && glasses.number <= 22).map((glasses) => <Items key={glasses._id} glasses={glasses} />) 
+                }
             </div>  
             <br />
             <br />

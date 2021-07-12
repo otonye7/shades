@@ -24,10 +24,11 @@ const PostForm = () => {
     const [value, setValues] = useState({
         title: '',
         price: '',
+        number: '',
         description: '',
         image: ''
     })
-    const {title, price, description, image} = value
+    const {title, price, description, image, number} = value
     const [preview, setPreview] = useState('')
     
     let user = window.localStorage.getItem('auth');
@@ -39,6 +40,7 @@ const PostForm = () => {
         let glassData = new FormData()
         glassData.append('title', title)
         glassData.append('price', price)
+        glassData.append('number', number)
         glassData.append('description', description)
         image && glassData.append('image', image)
         
@@ -78,6 +80,8 @@ const PostForm = () => {
                 <TextField onChange={handleChange} name='title' size="small"  label="Title" variant="outlined" />
                 <br />
                 <TextField onChange={handleChange} name='price' type='number' size="small" label="Price"    variant="outlined" />
+                <br />
+                <TextField onChange={handleChange} name='number' type='number' size="small" label="number"    variant="outlined" />
                 <br />
                 <TextField onChange={handleChange} name='description' size="large" label="Descripion"    variant="outlined" />
             </div>
