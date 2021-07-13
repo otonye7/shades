@@ -11,6 +11,12 @@ export const IconsContainer = styled.div`
        padding-left: 10rem;
        grid-template-columns: 1fr 1fr 1fr 1fr;
        justify-content: center;
+
+       @media screen and (max-width: 767px){
+        /* width: 100%; */
+        grid-template-columns: 1fr 1fr;
+        padding-left: 1rem;
+     }
    }
 
    .first-container {

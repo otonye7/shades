@@ -3,11 +3,16 @@ import styled from 'styled-components';
 
 export const BestSellerItemsContainer = styled.div`
    width: 100%;
+   
 
    .overall {
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
+
+      @media screen and (max-width: 767px){
+        grid-template-columns: 1fr;
+     }
    }
 
    .sub {
@@ -18,6 +23,10 @@ export const BestSellerItemsContainer = styled.div`
    .contents {
       width: 60%;
       margin: 0 auto;
+      @media screen and (max-width: 767px){
+        width: 98%;
+        margin: 0 auto;
+     }
    }
 
    .title-price {
@@ -60,5 +69,9 @@ export const BestSellerItemsContainer = styled.div`
        font-weight: 400;
        color: #262626;
        line-height: 1.5;
+   }
+
+   img {
+      width: 100%;
    }
 `;

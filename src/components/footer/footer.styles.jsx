@@ -10,6 +10,18 @@ export const FooterContainer = styled.div`
        margin: 0 auto;
        display: flex;
        justify-content: space-between;
+
+  @media screen and (max-width: 767px){
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+  
+  }
+   }
+
+   .icons {
+     display: flex;
+     justify-content: center;
    }
 
    .text {
@@ -19,6 +31,11 @@ export const FooterContainer = styled.div`
     font-weight: 400;
     color: #262626;
     line-height: 1.5;
+
+    @media screen and (max-width: 767px){
+       font-size: 13px;
+       text-align: center;
+  }
    }
 
    .bottom-text {

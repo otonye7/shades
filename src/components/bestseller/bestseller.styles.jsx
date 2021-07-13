@@ -14,6 +14,10 @@ export const BestSellerContainer = styled.div`
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+
+      @media screen and (max-width: 767px){
+         width: 100%;
+  }
    }
 
    .text {

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 export const AlphaContainer = styled.div`
    width: 100%;
+   
 
    .title {
        text-align: center;
@@ -17,6 +18,10 @@ export const AlphaContainer = styled.div`
    .span {
        width: 60%;
        margin: 0 auto;
+
+       @media screen and (max-width: 767px){
+        width: 100%;
+     }
    }
 
    .text {
@@ -27,6 +32,10 @@ export const AlphaContainer = styled.div`
        font-weight: 400;
        color: #262626;
        line-height: 1.5;
+
+       @media screen and (max-width: 767px){
+        width: 100%;
+     }
    }
 
    .texts {

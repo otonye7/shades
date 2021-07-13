@@ -28,6 +28,16 @@ export const MenuItemContainer = styled.div`
    .border {
       border: 0.7px solid black;
       opacity: 0.3;
+
+ @media screen and (max-width: 767px){
+     display: none;
+  }
+   }
+
+   .menu-title {
+    @media screen and (max-width: 767px){
+    text-align: center;
+  }
    }
 
    img {

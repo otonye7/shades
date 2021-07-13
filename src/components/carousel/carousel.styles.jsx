@@ -3,6 +3,15 @@ import styled from 'styled-components';
 
 export const CarouselContainer = styled.div`
 
+.first {
+    width: 90%;
+    margin: 0 auto;
+
+    @media screen and (max-width: 767px){
+          width: 70%;
+}
+}
+
 .text {
        text-align: center;
        font-size: 30px;
@@ -11,6 +20,10 @@ export const CarouselContainer = styled.div`
        font-weight: 400;
        color: #262626;
        line-height: 1.5;
+
+       @media screen and (max-width: 767px){
+          font-size: 17px;
+       }
    }
 
    .logo-text {

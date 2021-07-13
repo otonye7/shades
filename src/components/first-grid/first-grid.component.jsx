@@ -9,14 +9,14 @@ const FirstGrid = () => {
         <FirstGridContainer>
              <div className='leftimage'>
                 <img src={Man} alt="" />
-                <div className='container'>
+                <div className='male-container'>
                       <h2 className='text'>Men's</h2>
                       <button onClick={() => history.push('/men')} className='btn'>Show Now</button>
                 </div>
              </div>
              <div className='leftimage'>
                 <img src={Woman} alt="" />
-                <div className='container'>
+                <div className='female-container'>
                       <h2 className='text'>Women's</h2>
                       <button onClick={() => history.push('/women')} className='btn'>Show Now</button>
                 </div>

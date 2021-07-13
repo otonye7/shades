@@ -7,6 +7,10 @@ export const CardContainer = styled.div`
    grid-template-columns: 1fr 1fr 1fr;
    grid-gap: 15px;
 
+   @media screen and (max-width: 767px){
+    grid-template-columns: 1fr;
+  }
+
    .link-text {
        text-align: center;
    }

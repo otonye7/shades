@@ -6,6 +6,10 @@ export const InstaContainer = styled.div`
    width: 100%;
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+   @media screen and (max-width: 767px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
    
  
    img {

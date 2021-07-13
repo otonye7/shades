@@ -14,6 +14,10 @@ export const NewArrivalContainer = styled.div`
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+
+      @media screen and (max-width: 767px){
+        grid-template-columns: 1fr;
+     }
    }
 
    .text {

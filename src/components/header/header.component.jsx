@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import VoicemailIcon from '@material-ui/icons/Voicemail';
- import SearchIcon from '@material-ui/icons/Search';
+//  import SearchIcon from '@material-ui/icons/Search';
 import PersonIcon from '@material-ui/icons/Person';
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
 
@@ -97,7 +97,7 @@ const Header = () => {
               </NavLink>
             </li>
           </ul>
-          <SearchIcon />
+          {/* <SearchIcon /> */}
           <Link to='/login'>
              <PersonIcon className='icons' />
           </Link>
