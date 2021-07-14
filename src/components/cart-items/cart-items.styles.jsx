@@ -5,41 +5,74 @@ export const MenuItemContainer = styled.div`
    width: 100%;
    margin: 0 auto;
 
+   .border {
+      width: 100%;
+      border: 0.7px solid black;
+      opacity: 0.3;
+   }
+ 
    .container {
-      /* width: 60%; */
       display: flex;
-      margin: 0 auto;
-      flex-direction: column;
-      align-items: center;
    }
 
-   .image {
-       cursor: pointer;
-   }
-
-   .title {
+   .title-text {
        font-family: Lato,sans-serif;
+       font-style: normal;
+       font-weight: 600;
+       line-height: 1.2;
+       font-size: 20px;
+   }
+
+   .price {
+       padding-top: 5px;
+   }
+
+   .price-text {
+    font-family: Lato,sans-serif;
        font-style: normal;
        font-weight: 400;
        line-height: 1.2;
-       font-size: 15px;
+       font-size: 19px;
    }
 
-   .button {
-       display: flex;
-       justify-content: center;
+   .buttons {
+       padding-top: 5px;
+       align-items: center;
    }
-   
-   .b-text {
-      width: 80%;
-      height: 40px;
-      background-color: black;
-      color: white;
-      font-size: 17px;
+
+   .contents {
+       width: 70%;
+       align-items: center;
+   }
+
+   .button-container {
+       display: flex;
+       justify-content: space-between;
+       align-content: center;
+   }
+
+   .quantity-button {
+       width: 30px;
+       height: 30px;
+       border: 0.7px solid black;
+       opacity: 0.4;
+       font-size: 15px;
+       color: black;
+       font-weight:600;
+   }
+
+   .negative-button {
+       width: 30px;
+       height: 30px;
+       border: 0.7px solid black;
+       opacity: 0.4;
+       font-size: 15px;
+       color: black;
+       font-weight:600;
    }
 
    img {
-       width: 100%;
+       width: 30%;
    }
 
 `;

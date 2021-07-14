@@ -11,6 +11,9 @@ const CartItems = ({cartItems}) => {
 
     return (
         <MenuItemContainer>
+        <br />
+        <div className='border'></div>
+        <br />
         <div className='container'>
            <div onClick={() => history.push(`/bestseller/${_id}`)} className='`menu-items'>
             { 
@@ -24,21 +27,28 @@ const CartItems = ({cartItems}) => {
              )
             
             }
-           
            </div>
-
-           <div className='menu-title'>
-               <h5 className='title'>{title}</h5>
-           </div>
-           <div className='menu-title'>
-               <h5 className='title'>${price}</h5>
-           </div>
-           <div className='menu-title'>
-               <h5 className='title'>${quantity}</h5>
-           </div>
+           <div className='contents'>
+           <h2 className='title-text'>{title}</h2>
+                <div className='button-container'>
+                <div className='buttons'>
+                    <button className='negative-button'>-</button>
+                    <button className='quantity-button'>{quantity}</button>
+                    <button className='negative-button'>+</button>
+                </div>
+                <div className='price'>
+                    <h2 className='price-text'>${price}</h2>
+                </div>
+                </div>
+               
+            </div>
            </div>
         </MenuItemContainer>
     )
 }
 
 export default CartItems;
+
+
+
+
