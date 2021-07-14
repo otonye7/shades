@@ -34,7 +34,7 @@ export const IconsContainer = styled.div`
    }
 
    img {
-       width: 30%;
+       width: 20%;
 
    }
 `;

@@ -4,8 +4,8 @@ import {useHistory} from 'react-router-dom';
 // import { withRouter } from 'react-router-dom';
 
 
-const Items = ({glasses}) => {
-    const {title, image, _id, price} = glasses
+const Items = ({glasses, addToCart}) => {
+    const {title, image, _id, price, quantity} = glasses
     const history = useHistory();
 
     //  let user = window.localStorage.getItem('auth');
@@ -48,7 +48,7 @@ const Items = ({glasses}) => {
            </div>
             {/* <button onClick={() => handleDelete(_id)}>Delete</button>  */}
             <div className='button'>
-                <button className='b-text'>Add To Cart</button>
+                <button onClick={() => addToCart(glasses)} className='b-text'>Add To Cart</button>
             </div>
         </MenuItemContainer>
     )

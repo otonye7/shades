@@ -8,9 +8,9 @@ import { BestSellerItemsContainer } from './best-seller-items.styles';
 
 
 
-const BestSellerItems = ({match}) => {
+const BestSellerItems = ({match, addToCart}) => {
+    console.log(addToCart)
 
-    // console.log(match)
     const [glass, setGlass] = useState([]);
 
     useEffect(() => {
@@ -24,7 +24,6 @@ const BestSellerItems = ({match}) => {
 
     const {_id,  title, price} = glass;
 
-    console.log(glass)
 
     return (
         <BestSellerItemsContainer>
@@ -63,7 +62,7 @@ const BestSellerItems = ({match}) => {
                     </div>
                     <br />
                     <div className='button'>
-                        <button className='b-text'>Add To Cart</button>
+                        <button onClick={() => addToCart()} className='b-text'>Add To Cart</button>
                     </div>
             </div>
             </div>

@@ -6,7 +6,9 @@ import Newarrival from  '../../assets/newarrival.png';
 import InstaGrid from '../insta-grid/insta-grid.component';
 
 const NewArrival = () => {
+
     const [glasses, setGlasses] = useState([]);
+    const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
         loadGlasses()
@@ -18,7 +20,22 @@ const NewArrival = () => {
         setGlasses(res.data)
     }
 
-    // console.log(glasses)
+    const addToCart = (cartItemToAdd) => {
+       const existingItems = cartItems.find((cartItem) => cartItem._id === cartItemToAdd._id);
+        if (existingItems) {
+            return cartItems.map(cartItem => cartItem._id === cartItemToAdd._id 
+            ?
+            setCartItems({...cartItem, quantity: cartItem.quantity + 1})
+            :
+           setCartItems(cartItem)
+            )
+        }
+        return setCartItems([...cartItems, {...cartItemToAdd, quantity: 1}])
+    }
+
+
+
+
     return (
         <NewArrivalContainer>
              <div className='background-image'>
@@ -26,13 +43,15 @@ const NewArrival = () => {
             </div>
              <div  className='preview'>
                  {
-                  glasses.filter((glasses) => glasses.number > 10 && glasses.number <= 22).map((glasses) => <Items key={glasses._id} glasses={glasses} />) 
+                  glasses.filter((glasses) => glasses.number > 10 && glasses.number <= 22).map((glasses) => <Items key={glasses._id} glasses={glasses} addToCart={addToCart}/>) 
                 }
             </div>  
             <br />
             <br />
             <div className='other'>
                 <h2 className='text'>How Others Wear It</h2>
+                <pre>{JSON.stringify(cartItems)}</pre>
+                {/* {cartItems} */}
                 <br />
                 <InstaGrid />
             </div>

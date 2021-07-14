@@ -20,7 +20,10 @@ const BestSeller = () => {
         setGlasses(res.data)
     }
 
-    console.log(glasses)
+    // console.log(glasses)
+
+
+
     
 
     return (
@@ -32,7 +35,7 @@ const BestSeller = () => {
             <br />
             <div className='preview'>
                 {
-                    glasses.filter((glasses) => glasses.number <= 9).map((glasses) => <MenuItems key={glasses._id} glasses={glasses}/>)
+                    glasses.filter((glasses) => glasses.number <= 9).map((glasses) => <MenuItems key={glasses._id} glasses={glasses} />)
                 }
             </div>
             <br />
