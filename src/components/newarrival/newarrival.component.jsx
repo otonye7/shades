@@ -2,13 +2,16 @@ import {useState, useEffect} from 'react';
 import { NewArrivalContainer } from './newarrival.styles';
 import axios from 'axios';
 import Items from '../items/items.component';
+import CartItems from '../cart-items/cart-items.component';
 import Newarrival from  '../../assets/newarrival.png';
 import InstaGrid from '../insta-grid/insta-grid.component';
+import Modal from 'react-modal';
 
 const NewArrival = () => {
 
     const [glasses, setGlasses] = useState([]);
     const [cartItems, setCartItems] = useState([]);
+    const [modalIsOpen, setModalIsOpen] = useState(false)
 
     useEffect(() => {
         loadGlasses()
@@ -50,8 +53,12 @@ const NewArrival = () => {
             <br />
             <div className='other'>
                 <h2 className='text'>How Others Wear It</h2>
-                <pre>{JSON.stringify(cartItems)}</pre>
-                {/* {cartItems} */}
+                 <Modal isOpen={modalIsOpen} ariaHideApp={false}>
+                     {
+                         cartItems.map((cartItems) => <CartItems key={cartItems._id} cartItems={cartItems} />)
+                     }
+                 </Modal>
+                 <button onClick={() => setModalIsOpen(true)}>Click me to open modal</button>
                 <br />
                 <InstaGrid />
             </div>

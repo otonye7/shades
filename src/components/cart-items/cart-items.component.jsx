@@ -1,26 +1,14 @@
-import { MenuItemContainer } from './items.styles';
+import { MenuItemContainer } from './cart-items.styles';
 import {useHistory} from 'react-router-dom';
 //  import axios from 'axios';
 // import { withRouter } from 'react-router-dom';
 
 
-const Items = ({glasses, addToCart}) => {
-    const {title, image, _id, price} = glasses
+const CartItems = ({cartItems}) => {
+    console.log(cartItems)
+    const {title, image, _id, price, quantity} = cartItems
     const history = useHistory();
 
-    //  let user = window.localStorage.getItem('auth');
-    //  let userObj = JSON.parse(user);
-    //  const token = userObj.token;
-
-    //  const handleDelete = async ( glassId) => {
-    //     if (!window.confirm('Are you sure you want to delete this item ?')) return;
-    //   await axios.delete(`http://localhost:8000/api/delete-glasses/${glassId}`, {
-    //          headers: {
-    //          Authorization: `Bearer ${token}`
-    //         }
-    //     }).then((res) => console.log(res))
-      
-    // }
     return (
         <MenuItemContainer>
         <div className='container'>
@@ -45,13 +33,12 @@ const Items = ({glasses, addToCart}) => {
            <div className='menu-title'>
                <h5 className='title'>${price}</h5>
            </div>
+           <div className='menu-title'>
+               <h5 className='title'>${quantity}</h5>
            </div>
-            {/* <button onClick={() => handleDelete(_id)}>Delete</button>  */}
-            <div className='button'>
-                <button onClick={() => addToCart(glasses)} className='b-text'>Add To Cart</button>
-            </div>
+           </div>
         </MenuItemContainer>
     )
 }
 
-export default Items;
+export default CartItems;
