@@ -48,7 +48,7 @@ const Items = ({glasses, addToCart}) => {
            </div>
             {/* <button onClick={() => handleDelete(_id)}>Delete</button>  */}
             <div className='button'>
-                <button onClick={() => addToCart(glasses)} className='b-text'>Add To Cart</button>
+                <button onClick={() => addToCart( glasses)} className='b-text'>Add To Cart</button>
             </div>
         </MenuItemContainer>
     )

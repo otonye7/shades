@@ -17,7 +17,6 @@ const NewArrival = () => {
 
     const loadGlasses =  async () => {
         let res = await axios.get(`http://localhost:8000/api/bestseller`)
-        console.log(res)
         setGlasses(res.data)
     }
 
@@ -26,12 +25,16 @@ const NewArrival = () => {
         if (existingItems) {
             return cartItems.map(cartItem => cartItem._id === cartItemToAdd._id 
             ?
-            setCartItems({...cartItem, quantity: cartItem.quantity + 1})
+            setCartItems([{...cartItem, quantity: cartItem.quantity + 1}])
             :
-           setCartItems(cartItem)
+           cartItem
             )
         }
         return setCartItems([...cartItems, {...cartItemToAdd, quantity: 1}])
+    }
+
+    const totalPrice = () => {
+        return cartItems.reduce((accumulatedQuantity, cartItem) => accumulatedQuantity + cartItem.quantity * cartItem.price, 0)
     }
 
 
@@ -44,7 +47,12 @@ const NewArrival = () => {
             </div>
              <div  className='preview'>
                  {
-                  glasses.filter((glasses) => glasses.number > 10 && glasses.number <= 22).map((glasses) => <Items key={glasses._id} glasses={glasses} addToCart={addToCart}/>) 
+                  glasses.filter((glasses) => glasses.number > 10 && glasses.number <= 22).map((glasses) => <Items 
+                  key={glasses._id}
+                  glasses={glasses} 
+                  addToCart={addToCart} 
+                  />
+                  ) 
                 }
             </div>  
             <br />
@@ -52,7 +60,9 @@ const NewArrival = () => {
             <div className='other'>
                 <h2 className='text'>How Others Wear It</h2>
                 <br />
-                <Modal cartItems={cartItems}/>
+                <Modal 
+                cartItems={cartItems}
+                totalPrice={totalPrice}/>
                 <InstaGrid />
             </div>
         </NewArrivalContainer>

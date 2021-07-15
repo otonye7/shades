@@ -10,9 +10,18 @@ export const MenuItemContainer = styled.div`
       border: 0.7px solid black;
       opacity: 0.3;
    }
- 
+
    .container {
-      display: flex;
+       display: flex;
+       align-items: center;
+   }
+
+   .d-text {
+       font-family: Lato,sans-serif;
+       font-style: normal;
+       font-weight: 400;
+       line-height: 1.2;
+       font-size: 17px;  
    }
 
    .title-text {
@@ -23,32 +32,18 @@ export const MenuItemContainer = styled.div`
        font-size: 20px;
    }
 
-   .price {
-       padding-top: 5px;
+   .button-container {
+       display: flex;
+       align-items: center;
    }
 
    .price-text {
-    font-family: Lato,sans-serif;
+       font-family: Lato,sans-serif;
        font-style: normal;
        font-weight: 400;
        line-height: 1.2;
        font-size: 19px;
-   }
-
-   .buttons {
-       padding-top: 5px;
-       align-items: center;
-   }
-
-   .contents {
-       width: 70%;
-       align-items: center;
-   }
-
-   .button-container {
-       display: flex;
-       justify-content: space-between;
-       align-content: center;
+       padding-left: 1rem;
    }
 
    .quantity-button {
@@ -71,8 +66,44 @@ export const MenuItemContainer = styled.div`
        font-weight:600;
    }
 
+   .s-text {
+       text-align: center;
+       font-size: 18px;
+       font-family: Lato,sans-serif;
+       font-style: normal;
+       font-weight: 400;
+       line-height: 1.2;
+   }
+
+   .subtotal {
+       font-size: 18px;
+       font-family: Lato,sans-serif;
+       font-style: normal;
+       font-weight: 600;
+       line-height: 1.2;
+   }
+
+   .shipping-text {
+       text-align: center;
+       font-size: 18px;
+       font-family: Lato,sans-serif;
+       font-style: normal;
+       font-weight: 400;
+       line-height: 1.2;
+   }
+
+   .ship-container {
+       display: flex;
+       justify-content: space-between;
+   }
+
+   .subtotal-container {
+       display: flex;
+       justify-content: space-between;
+   }
+
    img {
-       width: 30%;
+       width: 100%;
    }
 
 `;

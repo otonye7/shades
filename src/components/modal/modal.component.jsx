@@ -18,7 +18,7 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-const ModalComponent = ({cartItems}) => {
+const ModalComponent = ({cartItems, totalPrice}) => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
 
     return (
@@ -33,7 +33,7 @@ const ModalComponent = ({cartItems}) => {
                      <ClearIcon  onClick={() => setModalIsOpen(false)} className='clear'/>
                  </div> 
                      {
-                         cartItems.map((cartItems) => <CartItems key={cartItems._id} cartItems={cartItems} />)
+                         cartItems.map((cartItems) => <CartItems key={cartItems._id} cartItems={cartItems} totalPrice={totalPrice}/>)
                      } 
                  </Modal>
                  <button onClick={() => setModalIsOpen(true)}>Click me to open modal</button>
