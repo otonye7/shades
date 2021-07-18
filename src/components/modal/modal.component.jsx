@@ -19,7 +19,7 @@ Modal.setAppElement('#root')
 const ModalComponent = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const { cart } = useSelector((state) => ({ ...state }));
-    console.log(cart)
+
 
     return (
         <ModalContainer>

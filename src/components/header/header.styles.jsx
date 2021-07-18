@@ -35,9 +35,8 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   list-style: none;
   padding-left: 0.5rem;
-  
-  
 }
+
 .nav-links {
   color: black;
   text-decoration: none;
@@ -91,6 +90,17 @@ export const HeaderContainer = styled.div`
 
 .g-icons {
   align-items: center;
+  position: relative;
+}
+
+.span {
+  width: 2%;
+  font-size: 20px;
+  position: absolute;
+  top: 3px;
+  background-color: #D8E0DE;
+  border-radius: 4px;
+  text-align: center;
 }
 
 @media screen and (max-width: 967px) {

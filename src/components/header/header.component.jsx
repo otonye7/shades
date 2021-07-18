@@ -7,14 +7,20 @@ import CloseIcon from '@material-ui/icons/Close';
 import VoicemailIcon from '@material-ui/icons/Voicemail';
 import Modal from '../modal/modal.component';
 import PersonIcon from '@material-ui/icons/Person';
-import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
+import { useSelector } from 'react-redux';
 
 
-const Header = () => {
+const Header = ({ ItemCount }) => {
 
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
+  const { cart } = useSelector((state) => ({ ...state }));
+
+  const itemCount = () => {
+    return cart.cartItems.reduce((accumulatedQuantity, cartItems) => accumulatedQuantity + cartItems.quantity, 0)
+  }
+  console.log(itemCount())
   return (
     <HeaderContainer>
       <nav className="navbar">
@@ -103,12 +109,17 @@ const Header = () => {
         </Link>
 
 
-        <Modal className='g-icons' />
+        <div >
+          <Modal className='g-icons' />
+          <span className='span'>{itemCount()}</span>
+        </div>
+
       </nav>
       <div className='border-bottom'></div>
     </HeaderContainer>
 
   )
 }
+
 
 export default Header;
