@@ -9,7 +9,6 @@ import Modal from '../modal/modal.component';
 
 const NewArrival = () => {
     const [glasses, setGlasses] = useState([]);
-    const [cartItems, setCartItems] = useState([]);
 
     useEffect(() => {
         loadGlasses()
@@ -41,8 +40,7 @@ const NewArrival = () => {
             <div className='other'>
                 <h2 className='text'>How Others Wear It</h2>
                 <br />
-                {/* <Modal
-                /> */}
+                <Modal />
                 <InstaGrid />
             </div>
         </NewArrivalContainer>

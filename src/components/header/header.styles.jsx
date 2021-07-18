@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.div`
   width: 90%;
   margin: 0 auto;
+
    /* max-width: 1350px; */
 .navbar {
   background-color: white;

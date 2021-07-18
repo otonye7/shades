@@ -2,6 +2,7 @@ import { MenuItemContainer } from './items.styles';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/cart/cart.actions';
+import Modal from '../modal/modal.component';
 //  import axios from 'axios';
 // import { withRouter } from 'react-router-dom';
 
