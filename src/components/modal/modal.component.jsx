@@ -9,7 +9,7 @@ import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
 
 const customStyles = {
     content: {
-        width: '60%',
+        width: '80%',
         marginTop: '5%'
     },
 };

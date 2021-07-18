@@ -20,7 +20,7 @@ const Header = ({ ItemCount }) => {
   const itemCount = () => {
     return cart.cartItems.reduce((accumulatedQuantity, cartItems) => accumulatedQuantity + cartItems.quantity, 0)
   }
-  console.log(itemCount())
+
   return (
     <HeaderContainer>
       <nav className="navbar">

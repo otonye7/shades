@@ -1,13 +1,22 @@
 import { MenuItemContainer } from './cart-items.styles';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 //  import axios from 'axios';
 // import { withRouter } from 'react-router-dom';
 
 
-const CartItems = ({ cartItems, totalPrice }) => {
-    console.log(cartItems)
+const CartItems = ({ cartItems }) => {
     const { title, image, _id, price, quantity, description } = cartItems
     const history = useHistory();
+
+    const { cart } = useSelector((state) => ({ ...state }));
+
+
+    const totalPrice = () => {
+        return cart.cartItems.reduce((accumulatedPrice, cartItems) => accumulatedPrice + cartItems.quantity * cartItems.price, 0)
+    }
+
+
 
     return (
         <MenuItemContainer>
@@ -55,7 +64,7 @@ const CartItems = ({ cartItems, totalPrice }) => {
                 </div>
                 <div className='subtotal-container'>
                     <h2 className='subtotal'>Subtotal</h2>
-                    {/* <h2 className='price-text'>${totalPrice(price)}</h2> */}
+                    <span className='price-text'>${totalPrice()}</span>
                 </div>
             </div>
         </MenuItemContainer>
