@@ -8,7 +8,7 @@ import { addItem, removeItem, clearItemFromCart } from '../../redux/cart/cart.ac
 // import { withRouter } from 'react-router-dom';
 
 
-const CartItems = ({ cartItems, addItem, removeItem }) => {
+const CartItems = ({ cartItems, addItem, removeItem, clearItemFromCart }) => {
     const { title, image, _id, price, quantity, description } = cartItems
     const history = useHistory();
 
