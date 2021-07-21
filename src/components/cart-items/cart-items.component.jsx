@@ -1,11 +1,14 @@
 import { MenuItemContainer } from './cart-items.styles';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { connect } from 'react-redux';
+import { addItem, removeItem, clearItemFromCart } from '../../redux/cart/cart.actions';
+
 //  import axios from 'axios';
 // import { withRouter } from 'react-router-dom';
 
 
-const CartItems = ({ cartItems }) => {
+const CartItems = ({ cartItems, addItem, removeItem }) => {
     const { title, image, _id, price, quantity, description } = cartItems
     const history = useHistory();
 
@@ -42,15 +45,17 @@ const CartItems = ({ cartItems }) => {
                     <h2 className='d-text'>{description}</h2>
                     <div className='button-container'>
                         <div className='buttons'>
-                            <button className='negative-button'>-</button>
+                            <button className='negative-button' onClick={() => removeItem(cartItems)}>-</button>
                             <button className='quantity-button'>{quantity}</button>
-                            <button className='negative-button'>+</button>
+                            <button className='negative-button' onClick={() => addItem(cartItems)}>+</button>
                         </div>
                         <div className='price'>
                             <h2 className='price-text'>${price}</h2>
                         </div>
                     </div>
-
+                </div>
+                <div className='remove-button' onClick={() => clearItemFromCart(cartItems)}>
+                    &#10005;
                 </div>
             </div>
             <div className='price'>
@@ -71,7 +76,13 @@ const CartItems = ({ cartItems }) => {
     )
 }
 
-export default CartItems;
+const mapDispatchToProps = dispatch => ({
+    addItem: glasses => dispatch(addItem(glasses)),
+    removeItem: glasses => dispatch(removeItem(glasses)),
+    clearItemFromCart: glasses => dispatch(clearItemFromCart(glasses))
+})
+
+export default connect(null, mapDispatchToProps)(CartItems);
 
 
 

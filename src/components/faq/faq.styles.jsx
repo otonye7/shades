@@ -22,7 +22,7 @@ export const FaqContainer = styled.div`
    }
 
    .text {
-       font-size: 22px;
+       font-size: 16px;
        font-family: Lato,sans-serif;
        font-style: normal;
        font-weight: 500;

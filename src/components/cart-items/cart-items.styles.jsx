@@ -13,6 +13,7 @@ export const MenuItemContainer = styled.div`
 
    .container {
        display: flex;
+       justify-content: space-around;
        align-items: center;
    }
 
@@ -81,6 +82,11 @@ export const MenuItemContainer = styled.div`
        font-style: normal;
        font-weight: 600;
        line-height: 1.2;
+   }
+
+   .remove-button {
+       cursor: pointer;
+       color: black;
    }
 
    .shipping-text {

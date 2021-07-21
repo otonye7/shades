@@ -1,15 +1,16 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import AlphaStory from '../alpha-story/alpha-story.component';
 import StarRateIcon from '@material-ui/icons/StarRate';
+import { connect } from 'react-redux';
+import { addItem } from '../../redux/cart/cart.actions';
 import { BestSellerItemsContainer } from './best-seller-items.styles';
 
 
 
 
 
-const BestSellerItems = ({match, addToCart}) => {
-    console.log(addToCart)
+const BestSellerItems = ({ match, addItem }) => {
 
     const [glass, setGlass] = useState([]);
 
@@ -18,54 +19,54 @@ const BestSellerItems = ({match, addToCart}) => {
     }, [])
 
     const loadGlass = async () => {
-       let res = await axios.get(`http://localhost:8000/api/bestseller/${match.params.id}`)
-      setGlass(res.data)
+        let res = await axios.get(`http://localhost:8000/api/bestseller/${match.params.id}`)
+        setGlass(res.data)
     }
 
-    const {_id,  title, price} = glass;
+    const { _id, title, price } = glass;
 
 
     return (
         <BestSellerItemsContainer>
             <div className='overall'>
-            <div className='container'>
-                <div className='image'>
-                    <img  src={`http://localhost:8000/api/bestseller/image/${_id}`} alt='' /> 
+                <div className='container'>
+                    <div className='image'>
+                        <img src={`http://localhost:8000/api/bestseller/image/${_id}`} alt='' />
+                    </div>
                 </div>
-            </div>
-           
-            <div className='sub'>
-                <div className='contents'>
-                    <div className='title-price'>
-                        <h3 className='title-text'>{title}</h3>
-                        <h3 className='title-text'>${price}</h3>
+
+                <div className='sub'>
+                    <div className='contents'>
+                        <div className='title-price'>
+                            <h3 className='title-text'>{title}</h3>
+                            <h3 className='title-text'>${price}</h3>
+                        </div>
+                        <div className='border'></div>
+                        <br />
+                        <div className='icons'>
+                            <StarRateIcon className='star' />
+                            <StarRateIcon className='star' />
+                            <StarRateIcon className='star' />
+                            <StarRateIcon className='star' />
+                            <StarRateIcon className='star' />
+                        </div>
+                        <br />
+                        <div className='description'>
+                            <li className='list'> Polarized lenses with 100% UVA/UVB Protection</li>
+                            <li className='list'> Acetate and metal frame for a premium look and feel</li>
+                            <li className='list'> Flexible frame adaptable to all face shapes</li>
+                            <li className='list'>Adjustable nose pads and exquisite screws and hinges</li>
+                            <li className='list'> Lightweight with anti-slip technology</li>
+                            <li className='list'>Front width: 143 mm; height: 47 mm; weight: 24 g</li>
+                            <li className='list'> Premium leather case and microfiber cleaning cloth included</li>
+                            <li className='list'>1-year manufacturer warranty</li>
+                        </div>
+                        <br />
+                        <div className='button'>
+                            <button onClick={() => addItem(glass)} className='b-text'>Add To Cart</button>
+                        </div>
                     </div>
-                    <div className='border'></div>
-                    <br />
-                    <div className='icons'>
-                       <StarRateIcon className='star'/> 
-                       <StarRateIcon className='star'/> 
-                       <StarRateIcon className='star'/> 
-                       <StarRateIcon className='star'/> 
-                       <StarRateIcon className='star'/> 
-                    </div>
-                    <br />
-                    <div className='description'>
-                        <li className='list'> Polarized lenses with 100% UVA/UVB Protection</li>
-                        <li className='list'> Acetate and metal frame for a premium look and feel</li>
-                        <li className='list'> Flexible frame adaptable to all face shapes</li>
-                        <li className='list'>Adjustable nose pads and exquisite screws and hinges</li>
-                        <li className='list'> Lightweight with anti-slip technology</li>
-                        <li className='list'>Front width: 143 mm; height: 47 mm; weight: 24 g</li>
-                        <li className='list'> Premium leather case and microfiber cleaning cloth included</li>
-                        <li className='list'>1-year manufacturer warranty</li>
-                    </div>
-                    <br />
-                    <div className='button'>
-                        <button onClick={() => addToCart()} className='b-text'>Add To Cart</button>
-                    </div>
-            </div>
-            </div>
+                </div>
             </div>
             <br />
             <br />
@@ -76,4 +77,8 @@ const BestSellerItems = ({match, addToCart}) => {
     )
 }
 
-export default BestSellerItems;
+const mapDispatchToProps = dispatch => ({
+    addItem: glasses => dispatch(addItem(glasses))
+})
+
+export default connect(null, mapDispatchToProps)(BestSellerItems);

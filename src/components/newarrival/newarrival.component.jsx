@@ -4,7 +4,7 @@ import axios from 'axios';
 import Items from '../items/items.component';
 import Newarrival from '../../assets/newarrival.png';
 import InstaGrid from '../insta-grid/insta-grid.component';
-import Modal from '../modal/modal.component';
+
 
 
 const NewArrival = () => {
@@ -40,7 +40,6 @@ const NewArrival = () => {
             <div className='other'>
                 <h2 className='text'>How Others Wear It</h2>
                 <br />
-                <Modal />
                 <InstaGrid />
             </div>
         </NewArrivalContainer>
