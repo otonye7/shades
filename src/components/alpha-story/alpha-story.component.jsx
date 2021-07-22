@@ -1,6 +1,7 @@
 import { AlphaContainer } from './alpha-story.styles';
 import Faq from '../faq/faq.component';
 import Reviews from '../reviews/reviews.component';
+import Questions from '../questions/questions.component';
 import InstaGrid from '../insta-grid/insta-grid.component';
 
 const AlphaStory = () => {
@@ -26,6 +27,7 @@ const AlphaStory = () => {
             <br />
             <Reviews />
             <br />
+            <Questions />
             <div className='other'>
                 <h2 className='texts'>How Others Wear It</h2>
                 <br />

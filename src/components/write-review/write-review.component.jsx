@@ -50,13 +50,12 @@ const WriteReview = () => {
             console.log(err)
         }
     }
-
-    console.log(show)
     return (
         <WriteReviewContainer>
             <div className='review-button'>
                 <button className='r-button' onClick={handleShow}>WRITE A REVIEW</button>
             </div>
+            <br />
             <br />
             {
                 show ?
