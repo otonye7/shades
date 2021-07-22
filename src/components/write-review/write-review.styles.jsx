@@ -1,8 +1,16 @@
 import styled from 'styled-components';
-import { getButtonColor } from '../../utils/utils';
 
-export const ButtonContainer = styled.div`
-    button {
+
+export const WriteReviewContainer = styled.div`
+   width: 100%;
+  
+   .review-button {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+   }
+
+   .r-button {
         min-width: 25px;
         width: 140px;
         height: 38px;
@@ -10,10 +18,16 @@ export const ButtonContainer = styled.div`
         /* line-height: 28px; */
         padding: 0 18px 0 18px;
         font-size: 15px;
-        background-color: ${getButtonColor};
+        background-color: black;
         color: white;
         border: none;
         outline: none;
         cursor: pointer;
     }
+
+   .fields {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+   }
 `;
