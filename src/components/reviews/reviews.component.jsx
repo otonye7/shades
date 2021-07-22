@@ -1,6 +1,7 @@
 import { ReviewsContainer } from './reviews.styles';
 import CardContainer from '../reviews-carousel/reviews-carousel.component';
 import WriteReview from '../write-review/write-review.component';
+import GetReviews from '../get-reviews/get-reviews.component'
 
 const Reviews = () => {
     return (
@@ -17,6 +18,9 @@ const Reviews = () => {
                 <br />
                 <br />
                 <WriteReview />
+                <br />
+                <br />
+                <GetReviews />
             </div>
         </ReviewsContainer>
     )

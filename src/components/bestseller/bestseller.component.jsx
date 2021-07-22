@@ -1,8 +1,8 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import MenuItems from '../menu-items/menu-items.component';
 import { BestSellerContainer } from './bestseller.styles';
-import bestSeller from  '../../assets/bestseller.png';
+import bestSeller from '../../assets/bestseller.png';
 import InstaGrid from '../insta-grid/insta-grid.component';
 
 
@@ -16,20 +16,13 @@ const BestSeller = () => {
 
     const loadGlasses = async () => {
         let res = await axios.get(`http://localhost:8000/api/bestseller`)
-        // console.log(res)
         setGlasses(res.data)
     }
-
-    // console.log(glasses)
-
-
-
-    
 
     return (
         <BestSellerContainer>
             <div className='background-image'>
-                 <img src={bestSeller} alt="" />
+                <img src={bestSeller} alt="" />
             </div>
             <br />
             <br />
