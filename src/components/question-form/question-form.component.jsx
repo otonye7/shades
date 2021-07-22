@@ -17,13 +17,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const QuestionsForm = ({ handleSubmit, questions, handleQuestions }) => {
+const QuestionsForm = ({ handleQuestionsSubmit, question, handleQuestions }) => {
     const classes = useStyles();
     return (
         <QuestionFormContainer>
-            <form className={classes.root} onSubmit={handleSubmit} noValidate autoComplete="off">
+            <form className={classes.root} onSubmit={handleQuestionsSubmit} noValidate autoComplete="off">
                 <div className='form-container'>
-                    <TextField className='forms' type='text' size="large" value={questions} onChange={handleQuestions} label="Ask Question ?" variant="outlined" />
+                    <TextField className='forms' type='text' size="large" value={question} onChange={handleQuestions} label="Ask Question ?" variant="outlined" />
                     <br />
                     <br />
                     <div className='button-container'>

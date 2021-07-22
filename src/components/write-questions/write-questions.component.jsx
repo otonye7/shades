@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const WriteReview = () => {
     const [show, setShow] = useState(false)
-    const [questions, setQuestions] = useState('');
+    const [question, setQuestions] = useState('');
 
     const handleShow = () => {
         setShow(!show)
@@ -15,12 +15,12 @@ const WriteReview = () => {
         setQuestions(e.target.value)
     }
 
-    const handleSubmit = async (e) => {
+    const handleQuestionsSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const res = await axios.post(`http://localhost:8000/api/questions`, {
-                questions
+                question
             })
             console.log(res)
             setTimeout(() => {
@@ -42,9 +42,9 @@ const WriteReview = () => {
                 show ?
                     <div className='fields'>
                         <QuestionsForm
-                            questions={questions}
+                            questions={question}
                             handleQuestions={handleQuestions}
-                            handleSubmit={handleSubmit}
+                            handleSubmit={handleQuestionsSubmit}
                         />
                     </div>
                     :

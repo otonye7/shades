@@ -10,6 +10,10 @@ export const LoginContainer = styled.div`
        width: 50%;
        align-content: center;
        margin: 0 auto;
+
+       @media screen and (max-width: 767px){
+     width: 100%;
+     }
    }
 
    .login-text {

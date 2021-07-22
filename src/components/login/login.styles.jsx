@@ -26,6 +26,10 @@ export const LoginContainer = styled.div`
        justify-content: center;
        width: 40%;
        margin: 0 auto;
+
+    @media screen and (max-width: 767px){
+     width: 100%;
+    }
    }
 
 `;

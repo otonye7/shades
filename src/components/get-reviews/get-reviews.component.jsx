@@ -21,7 +21,6 @@ const GetReviews = () => {
         <GetReviewsContainer>
             <div className='link-container'>
                 <Link className='link-reviews'>Reviews</Link>
-                <Link className='link-question'>Questions</Link>
             </div>
             <br />
             <div className='review-border'></div>

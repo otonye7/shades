@@ -1,6 +1,6 @@
 import { ReviewsContainer } from './questions.styles';
 import WriteQuestions from '../write-questions/write-questions.component';
-// import GetReviews from '../get-reviews/get-reviews.component'
+import GetQuestions from '../get-questions/get-questions.component'
 
 const Questions = () => {
     return (
@@ -12,7 +12,7 @@ const Questions = () => {
                 <br />
                 <WriteQuestions />
                 <br />
-                {/* <GetReviews /> */}
+                <GetQuestions />
             </div>
         </ReviewsContainer>
     )

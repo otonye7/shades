@@ -30,6 +30,12 @@ export const LoginFormContainer = styled.div`
     font-weight: 400;
     color: #262626;
     line-height: 1.5;
+    text-decoration: none;
+   }
+
+   .account-link {
+       display: flex;
+       justify-content: center;
    }
 
   .btn {
