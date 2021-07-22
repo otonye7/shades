@@ -14,6 +14,11 @@ export const GetReviewsContainer = styled.div`
        color: black;
    }
 
+   .review-border {
+      border: 0.7px solid black;
+      opacity: 0.3;
+   }
+
    .link-question {
        text-decoration: none;
        color: black;

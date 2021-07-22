@@ -24,6 +24,8 @@ const GetReviews = () => {
                 <Link className='link-question'>Questions</Link>
             </div>
             <br />
+            <div className='review-border'></div>
+            <br />
             <div className='previews'>
                 {
                     review.map((review) => <ReviewItems key={review._id} review={review} />)

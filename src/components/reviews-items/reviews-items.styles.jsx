@@ -15,6 +15,21 @@ export const ReviewsItemsContainer = styled.div`
       line-height: 1.2;
       font-size: 12px;
       color: #2F84ED;
+      padding-left: 0.5rem;
+   }
+
+   .avatar {
+      background-color: #83B6DD;
+   }
+
+   .item-border {
+      border: 0.7px solid black;
+      opacity: 0.3;
+   }
+
+   .icons {
+      display: flex;
+      padding-left: 2.8rem;
    }
 
    
@@ -25,6 +40,7 @@ export const ReviewsItemsContainer = styled.div`
       line-height: 1.2;
       font-size: 18px;
       color: black;
+      padding-left: 3rem;
    }
 
    .review-reviews {
@@ -34,6 +50,11 @@ export const ReviewsItemsContainer = styled.div`
       line-height: 1.2;
       font-size: 13px;
       color: black;
+      padding-left: 3rem;
+   }
+
+   .name-container {
+      display: flex;
    }
 
 `;
