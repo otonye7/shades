@@ -33,12 +33,19 @@ const GetReviews = () => {
                     review.map((review) => <ReviewItems key={review._id} review={review} />)
                 }
             </div>
-            <Pagination count={10} color="primary" onChange={(event, value) => setPage(value)} />
+            <Pagination count={10} defaultPage={1} page={page} color="primary" onChange={(event, value) => setPage(value)} />
         </GetReviewsContainer>
     )
 }
 
 export default GetReviews
+
+
+
+
+
+
+
 
 
 

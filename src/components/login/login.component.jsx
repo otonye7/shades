@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { LoginContainer } from './login.styles';
 import LoginForm from '../login-form/login-form.component';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import { useHistory } from "react-router-dom";
 
 
@@ -43,6 +44,7 @@ const Login = () => {
         }
         catch (err) {
             console.log(err)
+            if (err.response.status === 400) toast.error(error.response.data)
         }
     }
 
