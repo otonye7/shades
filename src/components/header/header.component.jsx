@@ -7,18 +7,36 @@ import CloseIcon from '@material-ui/icons/Close';
 import VoicemailIcon from '@material-ui/icons/Voicemail';
 import Modal from '../modal/modal.component';
 import PersonIcon from '@material-ui/icons/Person';
+import HowToRegIcon from '@material-ui/icons/HowToReg';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 
 const Header = ({ ItemCount }) => {
 
+  const history = useHistory()
+
   const [click, setClick] = useState(false);
+
+  let user = window.localStorage.getItem('auth');
+  // let userObj = JSON.parse(user);
+  // let person = userObj.user
+  // console.log(person)
+
 
   const handleClick = () => setClick(!click);
   const { cart } = useSelector((state) => ({ ...state }));
 
   const itemCount = () => {
     return cart.cartItems.reduce((accumulatedQuantity, cartItems) => accumulatedQuantity + cartItems.quantity, 0)
+  }
+
+  const logout = () => {
+    window.localStorage.removeItem('auth')
+    setTimeout(() => {
+      window.location.reload()
+    }, 1000)
+    history.push('/login')
   }
 
   return (
@@ -103,11 +121,16 @@ const Header = ({ ItemCount }) => {
             </NavLink>
           </li>
         </ul>
-        {/* <SearchIcon /> */}
-        <Link to='/login'>
-          <PersonIcon className='icons' />
-        </Link>
-
+        {
+          user ?
+            <Link>
+              <HowToRegIcon onClick={logout} className='icons' />
+            </Link>
+            :
+            <Link to='/login'>
+              <PersonIcon className='icons' />
+            </Link>
+        }
 
         <div >
           <Modal className='g-icons' />

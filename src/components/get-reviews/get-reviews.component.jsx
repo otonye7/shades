@@ -19,7 +19,7 @@ const GetReviews = () => {
         console.log(res)
         setReview(res.data)
     }
-    console.log(review)
+
     return (
         <GetReviewsContainer>
             <div className='link-container'>

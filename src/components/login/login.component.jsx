@@ -35,16 +35,18 @@ const Login = () => {
                 email,
                 password
             })
-
+            console.log(res)
             if (res.data) {
                 window.localStorage.setItem('auth', JSON.stringify(res.data))
-
                 history.push('/')
+                setTimeout(() => {
+                    window.location.reload()
+                }, 1000)
             }
         }
         catch (err) {
             console.log(err)
-            if (err.response.status === 400) toast.error(error.response.data)
+            if (err) toast(err)
         }
     }
 
