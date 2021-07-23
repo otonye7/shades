@@ -19,9 +19,7 @@ const Header = ({ ItemCount }) => {
   const [click, setClick] = useState(false);
 
   let user = window.localStorage.getItem('auth');
-  // let userObj = JSON.parse(user);
-  // let person = userObj.user
-  // console.log(person)
+
 
 
   const handleClick = () => setClick(!click);

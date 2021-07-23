@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { LoginContainer } from './login.styles';
 import LoginForm from '../login-form/login-form.component';
 import axios from 'axios';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useHistory } from "react-router-dom";
 
 
@@ -11,10 +12,6 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-
-    const error = {
-        message: "All inputs are required"
-    }
 
 
     const handleEmail = (e) => {
@@ -27,15 +24,12 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!email || !password) {
-            return alert(error.message)
-        }
         try {
             const res = await axios.post(`http://localhost:8000/api/login`, {
                 email,
                 password
             })
-            console.log(res)
+            toast.success('Login Successful')
             if (res.data) {
                 window.localStorage.setItem('auth', JSON.stringify(res.data))
                 history.push('/')
@@ -45,8 +39,7 @@ const Login = () => {
             }
         }
         catch (err) {
-            console.log(err)
-            if (err) toast(err)
+            if (err.response.status === 400) toast.error(err.response.data)
         }
     }
 
@@ -58,6 +51,7 @@ const Login = () => {
                 </div>
                 <br />
                 <br />
+                <ToastContainer position="top-center" />
                 <div className='login-form'>
                     <LoginForm
                         email={email}

@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 import { connect } from 'react-redux';
 import { addItem, removeItem, clearItemFromCart } from '../../redux/cart/cart.actions';
 
-//  import axios from 'axios';
-// import { withRouter } from 'react-router-dom';
 
 
 const CartItems = ({ cartItems, addItem, removeItem, clearItemFromCart }) => {

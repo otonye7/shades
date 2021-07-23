@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { LoginContainer } from './sign-up.styles';
 import SignUpForm from '../signup-form/signup-form.component';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const SignUp = () => {
@@ -45,10 +47,10 @@ const SignUp = () => {
                 email,
                 password
             })
-            console.log(res)
+            toast.success('Login Successful')
         }
         catch (err) {
-            console.log(err)
+            if (err.response.status === 400) toast.error(err.response.data)
         }
     }
 
@@ -58,6 +60,7 @@ const SignUp = () => {
                 <div className='text-container'>
                     <h2 className='login-text'>Create an account</h2>
                 </div>
+                <ToastContainer />
                 <SignUpForm
                     name={name}
                     lastName={lastName}

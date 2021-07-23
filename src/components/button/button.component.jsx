@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { ButtonContainer } from './button.styles';
 
-const Button = ({children}) => {
+const Button = ({ children }) => {
     return (
         <ButtonContainer>
             <button >
@@ -13,7 +13,6 @@ const Button = ({children}) => {
 
 Button.propTypes = {
     children: PropTypes.any,
-    // handleClick: PropTypes.func
 }
 
 export default Button

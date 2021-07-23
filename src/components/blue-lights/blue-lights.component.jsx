@@ -1,8 +1,8 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { NewArrivalContainer } from './blue-lights.styles';
 import axios from 'axios';
 import Items from '../items/items.component';
-import Newarrival from  '../../assets/bluelights.png';
+import Newarrival from '../../assets/bluelights.png';
 import InstaGrid from '../insta-grid/insta-grid.component';
 
 const BlueLights = () => {
@@ -12,21 +12,19 @@ const BlueLights = () => {
         loadGlasses()
     }, [])
 
-    const loadGlasses =  async () => {
+    const loadGlasses = async () => {
         let res = await axios.get(`http://localhost:8000/api/bestseller`)
-        console.log(res)
         setGlasses(res.data)
     }
 
-    // console.log(glasses)
     return (
         <NewArrivalContainer>
-             <div className='background-image'>
-                 <img src={Newarrival} alt="" />
+            <div className='background-image'>
+                <img src={Newarrival} alt="" />
             </div>
-             <div  className='preview'>
-                  {glasses.map((glasses) => <Items key={glasses._id} glasses={glasses} />) }
-            </div>  
+            <div className='preview'>
+                {glasses.map((glasses) => <Items key={glasses._id} glasses={glasses} />)}
+            </div>
             <br />
             <br />
             <div className='other'>

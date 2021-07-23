@@ -3,27 +3,12 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/cart/cart.actions';
 
-//  import axios from 'axios';
-// import { withRouter } from 'react-router-dom';
-
 
 const Items = ({ glasses, addItem }) => {
     const { title, image, _id, price } = glasses
     const history = useHistory();
 
-    //  let user = window.localStorage.getItem('auth');
-    //  let userObj = JSON.parse(user);
-    //  const token = userObj.token;
 
-    //  const handleDelete = async ( glassId) => {
-    //     if (!window.confirm('Are you sure you want to delete this item ?')) return;
-    //   await axios.delete(`http://localhost:8000/api/delete-glasses/${glassId}`, {
-    //          headers: {
-    //          Authorization: `Bearer ${token}`
-    //         }
-    //     }).then((res) => console.log(res))
-
-    // }
     return (
         <MenuItemContainer>
             <div className='container'>
