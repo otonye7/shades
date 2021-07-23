@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Pagination from '@material-ui/lab/Pagination';
 import { GetReviewsContainer } from './get-reviews.styles';
 import { Link } from 'react-router-dom';
 import ReviewItems from '../reviews-items/reviews-items.component';
 
+
 const GetReviews = () => {
+    const [page, setPage] = useState(1);
     const [review, setReview] = useState([]);
 
     useEffect(() => {
@@ -12,7 +15,7 @@ const GetReviews = () => {
     }, [])
 
     const loadReviews = async () => {
-        let res = await axios.get(`http://localhost:8000/api/get-reviews`)
+        let res = await axios.get(`http://localhost:8000/api/get-reviews?_page=${page}`)
         console.log(res)
         setReview(res.data)
     }
@@ -30,8 +33,12 @@ const GetReviews = () => {
                     review.map((review) => <ReviewItems key={review._id} review={review} />)
                 }
             </div>
+            <Pagination count={10} color="primary" onChange={(event, value) => setPage(value)} />
         </GetReviewsContainer>
     )
 }
 
 export default GetReviews
+
+
+

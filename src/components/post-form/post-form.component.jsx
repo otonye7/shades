@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { PostFormContainer } from './post-form.styles';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,17 +7,17 @@ import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      width: 550,
-      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-        borderColor: "black"
-      },
-      '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-        borderColor: 'black',
-        }
-      },
+        width: 550,
+        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "black"
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: 'black',
+            }
+        },
     },
-  }));
+}));
 
 const PostForm = () => {
     const classes = useStyles();
@@ -28,13 +28,13 @@ const PostForm = () => {
         description: '',
         image: ''
     })
-    const {title, price, description, image, number} = value
+    const { title, price, description, image, number } = value
     const [preview, setPreview] = useState('')
-    
+
     let user = window.localStorage.getItem('auth');
     let userObj = JSON.parse(user);
     const token = userObj.token;
-    
+
 
     const handleSubmit = async (e) => {
         let glassData = new FormData()
@@ -43,7 +43,7 @@ const PostForm = () => {
         glassData.append('number', number)
         glassData.append('description', description)
         image && glassData.append('image', image)
-        
+
         console.log([...glassData])
 
         try {
@@ -52,7 +52,6 @@ const PostForm = () => {
                     Authorization: `Bearer ${token}`
                 }
             })
-            console.log(res)
             setTimeout(() => {
                 window.location.reload()
             }, 1000)
@@ -64,36 +63,36 @@ const PostForm = () => {
 
     const handleImageChange = (e) => {
         setPreview(URL.createObjectURL(e.target.files[0]))
-        setValues({...value, image: e.target.files[0]})
+        setValues({ ...value, image: e.target.files[0] })
     }
 
     const handleChange = (e) => {
-        setValues({...value, [e.target.name]: e.target.value})
+        setValues({ ...value, [e.target.name]: e.target.value })
     }
 
     return (
         <PostFormContainer>
-             <form className={classes.root} onSubmit={handleSubmit}  noValidate autoComplete="off">
-              <div className='form-container'>
-                <input name='image' type='file' onChange={handleImageChange} />
+            <form className={classes.root} onSubmit={handleSubmit} noValidate autoComplete="off">
+                <div className='form-container'>
+                    <input name='image' type='file' onChange={handleImageChange} />
+                    <br />
+                    <TextField onChange={handleChange} name='title' size="small" label="Title" variant="outlined" />
+                    <br />
+                    <TextField onChange={handleChange} name='price' type='number' size="small" label="Price" variant="outlined" />
+                    <br />
+                    <TextField onChange={handleChange} name='number' type='number' size="small" label="number" variant="outlined" />
+                    <br />
+                    <TextField onChange={handleChange} name='description' size="large" label="Descripion" variant="outlined" />
+                </div>
                 <br />
-                <TextField onChange={handleChange} name='title' size="small"  label="Title" variant="outlined" />
-                <br />
-                <TextField onChange={handleChange} name='price' type='number' size="small" label="Price"    variant="outlined" />
-                <br />
-                <TextField onChange={handleChange} name='number' type='number' size="small" label="number"    variant="outlined" />
-                <br />
-                <TextField onChange={handleChange} name='description' size="large" label="Descripion"    variant="outlined" />
-            </div>
-            <br />
-            <div className='button-container'>
-               <img src={preview} alt="preview_image" className='img img-fluid m-2'/>
-                <pre>{JSON.stringify(value)}</pre>
-               <div className='btn'>
-                    <Button className='btn'>Post</Button>
-               </div>
-           </div>
-           </form>
+                <div className='button-container'>
+                    <img src={preview} alt="preview_image" className='img img-fluid m-2' />
+                    <pre>{JSON.stringify(value)}</pre>
+                    <div className='btn'>
+                        <Button className='btn'>Post</Button>
+                    </div>
+                </div>
+            </form>
         </PostFormContainer>
     )
 }

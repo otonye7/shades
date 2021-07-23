@@ -25,7 +25,7 @@ export const FooterContainer = styled.div`
    }
 
    .text {
-    font-size: 16px;
+    font-size: 12px;
     font-family: Lato,sans-serif;
     font-style: normal;
     font-weight: 400;
