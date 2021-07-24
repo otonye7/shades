@@ -19,7 +19,7 @@ const BestSellerItems = ({ match, addItem }) => {
     }, [])
 
     const loadGlass = async () => {
-        let res = await axios.get(`http://localhost:8000/api/bestseller/${match.params.id}`)
+        let res = await axios.get(`https://sohoquette.herokuapp.com/api/bestseller/${match.params.id}`)
         setGlass(res.data)
     }
 
