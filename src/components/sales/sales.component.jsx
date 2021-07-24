@@ -13,7 +13,7 @@ const Sales = () => {
     }, [])
 
     const loadGlasses = async () => {
-        let res = await axios.get(`http://localhost:8000/api/bestseller`)
+        let res = await axios.get(`https://sohoquette.herokuapp.com/api/bestseller`)
         console.log(res)
         setGlasses(res.data)
     }

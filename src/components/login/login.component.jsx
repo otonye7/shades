@@ -25,7 +25,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post(`http://localhost:8000/api/login`, {
+            const res = await axios.post(`https://sohoquette.herokuapp.com/api/login`, {
                 email,
                 password
             })

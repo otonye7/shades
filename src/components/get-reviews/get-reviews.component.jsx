@@ -15,7 +15,7 @@ const GetReviews = () => {
     }, [])
 
     const loadReviews = async () => {
-        let res = await axios.get(`http://localhost:8000/api/get-reviews?_page=${page}`)
+        let res = await axios.get(`https://sohoquette.herokuapp.com/api/get-reviews?_page=${page}`)
         setReview(res.data)
     }
 

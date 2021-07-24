@@ -4,10 +4,11 @@ import SignUpForm from '../signup-form/signup-form.component';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useHistory } from "react-router-dom";
 
 
 const SignUp = () => {
-
+    const history = useHistory();
     const [name, setName] = useState('');
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -41,13 +42,14 @@ const SignUp = () => {
             return alert(error.message)
         }
         try {
-            const res = await axios.post(`http://localhost:8000/api/signup`, {
+            const res = await axios.post(`https://sohoquette.herokuapp.com/api/signup`, {
                 name,
                 lastName,
                 email,
                 password
             })
-            toast.success('Login Successful')
+            toast.success('Sign Up Successful')
+            history.push('/login')
         }
         catch (err) {
             if (err.response.status === 400) toast.error(err.response.data)

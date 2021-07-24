@@ -1,7 +1,6 @@
 import { MenuItemContainer } from './menu-items.styles';
 import { useHistory } from 'react-router-dom';
-//  import axios from 'axios';
-// import { withRouter } from 'react-router-dom';
+
 
 
 const MenuItems = ({ glasses }) => {
@@ -14,7 +13,7 @@ const MenuItems = ({ glasses }) => {
                 <div onClick={() => history.push(`/bestseller/${_id}`)} className='`menu-items'>
                     {
                         image && image.contentType ? (
-                            <img src={`http://localhost:8000/api/bestseller/image/${_id}`}
+                            <img src={`https://sohoquette.herokuapp.com/api/bestseller/image/${_id}`}
                                 alt=""
                                 className="image"
                             />

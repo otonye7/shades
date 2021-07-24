@@ -12,7 +12,7 @@ const GetQuestions = () => {
     }, [])
 
     const loadQuestions = async () => {
-        let res = await axios.get(`http://localhost:8000/api/get-questions`)
+        let res = await axios.get(`https://sohoquette.herokuapp.com/api/get-questions`)
         setQuestions(res.data)
     }
     return (

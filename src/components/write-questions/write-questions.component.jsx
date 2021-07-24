@@ -19,7 +19,7 @@ const WriteReview = () => {
         e.preventDefault();
 
         try {
-            const res = await axios.post(`http://localhost:8000/api/questions`, {
+            const res = await axios.post(`https://sohoquette.herokuapp.com/api/questions`, {
                 question
             })
             console.log(res)

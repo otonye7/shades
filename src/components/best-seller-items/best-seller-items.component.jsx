@@ -31,7 +31,7 @@ const BestSellerItems = ({ match, addItem }) => {
             <div className='overall'>
                 <div className='container'>
                     <div className='image'>
-                        <img src={`http://localhost:8000/api/bestseller/image/${_id}`} alt='' />
+                        <img src={`https://sohoquette.herokuapp.com/api/bestseller/image/${_id}`} alt='' />
                     </div>
                 </div>
 
